@@ -111,7 +111,9 @@ class AppDefaults:
         "global_appearance": 'default',
         "global_dark_canvas": False,
         "global_theme": 'default',
-        "global_custom_titlebar": True,
+        # the custom title bar is Windows-style (window buttons on the right, hamburger menu); on macOS keep the native
+        # title bar with the traffic lights and the native menu bar
+        "global_custom_titlebar": sys.platform != "darwin",
 
         "global_layout": "compact",
         "global_hover_shape": False,
